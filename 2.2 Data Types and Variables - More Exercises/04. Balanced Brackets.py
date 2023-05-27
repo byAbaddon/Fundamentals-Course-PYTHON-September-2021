@@ -1,3 +1,12 @@
+bracket = 0
+for ch in [input() for _ in range(int(input()))]:
+    if ch == '(': bracket += 1
+    elif ch == ')': bracket -= 1
+    if bracket not in (0, 1): print("UNBALANCED"); exit()
+print('BALANCED')
+
+#-----------------------------------------(2)-----------------------
+
 stack = []
 is_balanced = True
 
@@ -14,7 +23,7 @@ for _ in range(int(input())):
             break
 print('BALANCED' if is_balanced and not stack else 'UNBALANCED')
 
-#--------------------------------------------(2)----------------------------------
+#--------------------------------------------(3)----------------------------------
 n = int(input())
 collection = [input() for _ in range(n)]
 is_open = False
