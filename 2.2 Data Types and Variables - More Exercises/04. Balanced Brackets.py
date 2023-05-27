@@ -1,3 +1,20 @@
+stack = []
+is_balanced = True
+
+for _ in range(int(input())):
+    line = input().strip()
+    if line == '(':
+        if stack and stack[-1] == '(':
+            is_balanced = False
+            break
+        stack.append(line)
+    elif line == ')':
+        if not stack or stack.pop() != '(':
+            is_balanced = False
+            break
+print('BALANCED' if is_balanced and not stack else 'UNBALANCED')
+
+#--------------------------------------------(2)----------------------------------
 n = int(input())
 collection = [input() for _ in range(n)]
 is_open = False
